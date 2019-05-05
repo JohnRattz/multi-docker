@@ -8,7 +8,7 @@ before_install:
 # Testing running section. If any command returns a value other than 0, TravisCI considers the build failed.
 script: # The tests run by `react-test npm test` fail with a "Network Error" for reasons unknown to me (not a React developer).
 #  - docker run -t johnrattz/react-test npm test -- --coverage
-  - docker run -t johnrattz/react-test npm start --
+  - $(exit 1)
 
 after_success:
   - docker build -t johnrattz/multi-client ./client
